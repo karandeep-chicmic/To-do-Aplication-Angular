@@ -1,0 +1,50 @@
+/* styles.css or any other CSS file you are using */
+* {
+  color: #3e4b3e;
+}
+.form-element {
+  margin-bottom: 20px;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.input[type="text"],
+.textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.textarea {
+  resize: vertical;
+}
+
+.button[type="submit"] {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.app-todo-details {
+  /* Style your todo details component if needed */
+}
+
+.validation {
+  color: rgb(94, 189, 30);
+  font-size: small;
+}
+
+.box {
+  background: #d8e6d2;
+}

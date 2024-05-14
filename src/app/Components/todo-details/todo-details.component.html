@@ -1,0 +1,48 @@
+<div class="container mt-3">
+  <!-- Table to display task data -->
+  <table class="table table-bordered table-hover">
+    <thead>
+      <!-- Table header -->
+      <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Completion Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Loop through task data -->
+      <tr *ngFor="let task of tblData">
+        <!-- Task title column -->
+        <td>{{ task.title }}</td>
+        <!-- Task description column -->
+        <td>{{ task.description }}</td>
+        <!-- Completion status column -->
+        <td>
+          <!-- Toggle switch -->
+          <label class="switch">
+            <!-- Checkbox input bound to completion status -->
+            <input
+              type="checkbox"
+              [checked]="task.isComplete"
+              (change)="toggleChanged(task._id, task)"
+            />
+            <!-- Slider for the switch -->
+            <span class="slider round"></span>
+          </label>
+        </td>
+        <!-- Actions column -->
+        <td>
+          <!-- Update button -->
+          <button class="btn btn-primary m-2" (click)="editTask(task)">
+            Update
+          </button>
+          <!-- Delete button -->
+          <button class="btn btn-danger" (click)="deleteTask(task._id)">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,49 @@
+<div class="box container border p-5 mt-4 mb-5">
+  <h3>Add Task</h3>
+  <!-- Used Reactive forms -->
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form-element">
+      
+      <label class="label">Title</label><br />
+      <input class="input" formControlName="title" type="text" />
+      <span *ngIf="this.form.controls['title'].touched">
+        <span
+          *ngIf="this.form.controls['title'].errors?.['required']"
+          class="validation"
+          >This Field is Required</span
+        >
+      </span>
+
+      <!-- Validations End -->
+    </div>
+    <div class="form-element">
+      <label class="label">Description</label><br />
+      <textarea
+        class="textarea"
+        formControlName="description"
+        cols="24"
+        rows="3"
+      ></textarea>
+      <!-- Validations -->
+      <span *ngIf="this.form.controls['description'].touched">
+        <span
+          *ngIf="this.form.controls['description'].errors?.['required']"
+          class="validation"
+          >This Field is Required</span
+        >
+        <span
+          *ngIf="this.form.controls['description'].errors?.['minlength']"
+          class="validation"
+          >Minimum length required is 10 letters</span
+        >
+      </span>
+
+      <!-- Validations End -->
+    </div>
+    <div class="form-submit">
+      <button class="button" type="submit">{{ buttonText }}</button>
+    </div>
+  </form>
+</div>
+
+<app-todo-details></app-todo-details>
